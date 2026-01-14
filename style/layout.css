@@ -19,12 +19,14 @@
     }
     #advertise{
         grid-area: advertise;
+         min-height: 70px;
     }
     footer{
         grid-area: footer;
     }
     .container{
         display: grid;
+        grid-auto-rows: minmax(100px, auto);
         gap: 20px;
         grid-template-areas: 
         "header header header header"
