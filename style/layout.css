@@ -1,0 +1,59 @@
+ /* Targets only the direct children of .container. It does not affect deeper nested elements */
+    .container>*{
+        border: 2px solid rgba(0, 68, 255, 0.849);
+        background-color: rgb(207, 196, 255);
+        padding: 30px;
+    }
+/* grid-area gives them names the Grid Layout engine can understand. */
+    header{
+        grid-area: header;
+    }
+    nav{
+        grid-area: navbar;
+    }
+    main{
+        grid-area: main;
+    }
+    #sidebar{
+        grid-area: sidebar;
+    }
+    #advertise{
+        grid-area: advertise;
+    }
+    footer{
+        grid-area: footer;
+    }
+    .container{
+        display: grid;
+        gap: 20px;
+        grid-template-areas: 
+        "header header header header"
+        "navbar main    main   sidebar"
+        "navbar main    main   advertise"
+        "navbar footer  footer  advertise"; 
+    }
+
+    @media screen and (max-width:576px) {
+        .container{
+        display: grid;
+        gap: 20px;
+        grid-template-areas: 
+        "header "
+        "navbar "
+        "main "
+        "sidebar"
+        "advertise"
+        "footer ";
+        }
+    }
+    @media screen and (min-width:576px) and (max-width:992px){
+        .container{
+        display: grid;
+        gap: 20px;
+        grid-template-areas: 
+        "header header  header"
+        "navbar navbar  navbar "
+        "sidebar main main"
+        "advertise  footer  footer";
+        }
+    }
